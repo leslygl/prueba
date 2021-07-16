@@ -1,0 +1,9 @@
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\ML\bin\Debug\ML.dll
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\ML\bin\Debug\ML.pdb
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\ML\obj\Debug\ML.dll
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\ML\obj\Debug\ML.pdb
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\ML\obj\Debug\ML.csprojResolveAssemblyReference.cache
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\ML\bin\Debug\ML.dll
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\ML\bin\Debug\ML.pdb
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\ML\obj\Debug\ML.dll
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\ML\obj\Debug\ML.pdb

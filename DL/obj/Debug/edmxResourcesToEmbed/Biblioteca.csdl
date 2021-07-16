@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BibliotecaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Coordenada">
+    <Key>
+      <PropertyRef Name="IdCoordenadas" />
+    </Key>
+    <Property Name="IdCoordenadas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Estante" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Sala" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Librero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Posicion" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Voluman">
+    <Key>
+      <PropertyRef Name="NumeroVolumen" />
+    </Key>
+    <Property Name="NumeroVolumen" Type="Int32" Nullable="false" />
+    <Property Name="Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="BibliotecaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Coordenadas" EntityType="Self.Coordenada" />
+    <EntitySet Name="Volumen" EntityType="Self.Voluman" />
+    <FunctionImport Name="CoordenadasAdd">
+      <Parameter Name="Estante" Mode="In" Type="String" />
+      <Parameter Name="Sala" Mode="In" Type="String" />
+      <Parameter Name="Librero" Mode="In" Type="String" />
+      <Parameter Name="Posicion" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CoordenadasGetAll" ReturnType="Collection(BibliotecaModel.CoordenadasGetAll_Result)" />
+    <FunctionImport Name="CoordenadasUpdate">
+      <Parameter Name="IdCoordenadas" Mode="In" Type="Int32" />
+      <Parameter Name="Estante" Mode="In" Type="String" />
+      <Parameter Name="Sala" Mode="In" Type="String" />
+      <Parameter Name="Librero" Mode="In" Type="String" />
+      <Parameter Name="Posicion" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="VolumenAdd">
+      <Parameter Name="NumeroVolumen" Mode="In" Type="Int32" />
+      <Parameter Name="Titulo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="VolumenDelete">
+      <Parameter Name="NumeroVolumen" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="VolumenGetAll" ReturnType="Collection(BibliotecaModel.VolumenGetAll_Result)" />
+    <FunctionImport Name="VolumenUpdate">
+      <Parameter Name="NumeroVolumen" Mode="In" Type="Int32" />
+      <Parameter Name="Titulo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CoordenadasGetById" ReturnType="Collection(BibliotecaModel.CoordenadasGetById_Result)">
+      <Parameter Name="IdCoordenada" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="VolumenGetById" ReturnType="Collection(BibliotecaModel.VolumenGetById_Result)">
+      <Parameter Name="NumeroVolumen" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CoordenadasDelete">
+      <Parameter Name="IdCoordenadas" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="CoordenadasGetAll_Result">
+    <Property Type="String" Name="Estante" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IdCoordenadas" Nullable="false" />
+    <Property Type="String" Name="Sala" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Librero" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Posicion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="VolumenGetAll_Result">
+    <Property Type="Int32" Name="NumeroVolumen" Nullable="false" />
+    <Property Type="String" Name="Titulo" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="CoordenadasGetById_Result">
+    <Property Type="String" Name="Estante" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IdCoordenadas" Nullable="false" />
+    <Property Type="String" Name="Sala" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Librero" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Posicion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="VolumenGetById_Result">
+    <Property Type="Int32" Name="NumeroVolumen" Nullable="false" />
+    <Property Type="String" Name="Titulo" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

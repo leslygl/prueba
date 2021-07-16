@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BibliotecaModelStoreContainer" CdmEntityContainer="BibliotecaEntities">
+    <EntitySetMapping Name="Coordenadas">
+      <EntityTypeMapping TypeName="BibliotecaModel.Coordenada">
+        <MappingFragment StoreEntitySet="Coordenadas">
+          <ScalarProperty Name="IdCoordenadas" ColumnName="IdCoordenadas" />
+          <ScalarProperty Name="Estante" ColumnName="Estante" />
+          <ScalarProperty Name="Sala" ColumnName="Sala" />
+          <ScalarProperty Name="Librero" ColumnName="Librero" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Volumen">
+      <EntityTypeMapping TypeName="BibliotecaModel.Voluman">
+        <MappingFragment StoreEntitySet="Volumen">
+          <ScalarProperty Name="NumeroVolumen" ColumnName="NumeroVolumen" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CoordenadasAdd" FunctionName="BibliotecaModel.Store.CoordenadasAdd" />
+    <FunctionImportMapping FunctionImportName="CoordenadasGetAll" FunctionName="BibliotecaModel.Store.CoordenadasGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BibliotecaModel.CoordenadasGetAll_Result">
+          <ScalarProperty Name="Estante" ColumnName="Estante" />
+          <ScalarProperty Name="IdCoordenadas" ColumnName="IdCoordenadas" />
+          <ScalarProperty Name="Sala" ColumnName="Sala" />
+          <ScalarProperty Name="Librero" ColumnName="Librero" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CoordenadasUpdate" FunctionName="BibliotecaModel.Store.CoordenadasUpdate" />
+    <FunctionImportMapping FunctionImportName="VolumenAdd" FunctionName="BibliotecaModel.Store.VolumenAdd" />
+    <FunctionImportMapping FunctionImportName="VolumenDelete" FunctionName="BibliotecaModel.Store.VolumenDelete" />
+    <FunctionImportMapping FunctionImportName="VolumenGetAll" FunctionName="BibliotecaModel.Store.VolumenGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BibliotecaModel.VolumenGetAll_Result">
+          <ScalarProperty Name="NumeroVolumen" ColumnName="NumeroVolumen" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="VolumenUpdate" FunctionName="BibliotecaModel.Store.VolumenUpdate" />
+    <FunctionImportMapping FunctionImportName="CoordenadasGetById" FunctionName="BibliotecaModel.Store.CoordenadasGetById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BibliotecaModel.CoordenadasGetById_Result">
+          <ScalarProperty Name="Estante" ColumnName="Estante" />
+          <ScalarProperty Name="IdCoordenadas" ColumnName="IdCoordenadas" />
+          <ScalarProperty Name="Sala" ColumnName="Sala" />
+          <ScalarProperty Name="Librero" ColumnName="Librero" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="VolumenGetById" FunctionName="BibliotecaModel.Store.VolumenGetById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BibliotecaModel.VolumenGetById_Result">
+          <ScalarProperty Name="NumeroVolumen" ColumnName="NumeroVolumen" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CoordenadasDelete" FunctionName="BibliotecaModel.Store.CoordenadasDelete" />
+  </EntityContainerMapping>
+</Mapping>

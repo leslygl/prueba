@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BibliotecaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Coordenadas">
+    <Key>
+      <PropertyRef Name="IdCoordenadas" />
+    </Key>
+    <Property Name="IdCoordenadas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estante" Type="varchar" MaxLength="20" />
+    <Property Name="Sala" Type="varchar" MaxLength="50" />
+    <Property Name="Librero" Type="varchar" MaxLength="10" />
+    <Property Name="Posicion" Type="int" />
+  </EntityType>
+  <EntityType Name="Volumen">
+    <Key>
+      <PropertyRef Name="NumeroVolumen" />
+    </Key>
+    <Property Name="NumeroVolumen" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Function Name="CoordenadasAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Estante" Type="varchar" Mode="In" />
+    <Parameter Name="Sala" Type="varchar" Mode="In" />
+    <Parameter Name="Librero" Type="varchar" Mode="In" />
+    <Parameter Name="Posicion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CoordenadasDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCoordenadas" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CoordenadasGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="CoordenadasGetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCoordenada" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CoordenadasUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCoordenadas" Type="int" Mode="In" />
+    <Parameter Name="Estante" Type="varchar" Mode="In" />
+    <Parameter Name="Sala" Type="varchar" Mode="In" />
+    <Parameter Name="Librero" Type="varchar" Mode="In" />
+    <Parameter Name="Posicion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VolumenAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumeroVolumen" Type="int" Mode="In" />
+    <Parameter Name="Titulo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="VolumenDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumeroVolumen" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VolumenGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VolumenGetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumeroVolumen" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VolumenUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumeroVolumen" Type="int" Mode="In" />
+    <Parameter Name="Titulo" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="BibliotecaModelStoreContainer">
+    <EntitySet Name="Coordenadas" EntityType="Self.Coordenadas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Volumen" EntityType="Self.Volumen" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

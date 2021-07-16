@@ -1,0 +1,139 @@
+﻿@model ML.Coordenadas
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Departamento</h5>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <div class="row">
+        <div class="col-md-12">
+           
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.IdCoordenada, new { @class = "hidden" })
+                        @Html.TextBoxFor(model => model.IdCoordenada, new { @class = "form-control hidden", @id = "txtIdCoordenadas" })
+                        @Html.ValidationMessageFor(model => model.IdCoordenada)
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Estante)
+                        @Html.TextBoxFor(model => model.Estante, new { @class = "form-control", @id = "txtEstante" })
+                        @Html.ValidationMessageFor(model => model.Estante)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Sala)
+                        @Html.TextBoxFor(model => model.Sala, new { @class = "form-control", @id = "txtSala" })
+                        @Html.ValidationMessageFor(model => model.Sala)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Librero)
+                        @Html.TextBoxFor(model => model.Librero, new { @class = "form-control", @id = "txtLibrero" })
+                        @Html.ValidationMessageFor(model => model.Librero)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Posicion)
+                        @Html.TextBoxFor(model => model.Posicion, new { @class = "form-control", @id = "txtPosicion" })
+                        @Html.ValidationMessageFor(model => model.Posicion)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <input onclick="Guardar()" value="Guardar" type="button" class="btn btn-success" />
+                    </div>
+                </div>
+                <div class="form-group">
+                <div class="col-md-3">
+                    @Html.ActionLink("Regresar", "GetAll", "Coordenadas", htmlAttributes: new { @class = "btn btn-danger" })
+                </div>
+            </div>
+            
+          
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function Guardar() {
+        if ($('#txtIdCoordenadas').val() == 0) {
+            Add();
+        }
+        else {
+            Update();
+        }
+    }
+
+    function GetJSONCoordenadas() {
+        var coordenadas = {
+            IdCoordenada: $('#txtIdCoordenadas').val(),
+            Estante: $('#txtEstante').val(),
+            Librero: $('#txtLibrero').val(),
+            Sala: $('#txtSala').val(),
+            Posicion: $('#txtPosicion').val(),
+
+        }
+        return coordenadas;
+    }
+
+
+    function Add() {
+
+        coordenadas = GetJSONCoordenadas();
+        
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:1076/api/Coordenadas/Add',
+            dataType: 'json',
+            data: coordenadas,
+            success: function (result) {
+                $('#myModal').modal();
+                aler('Se registro correctamete presione regrear para ver la tabla con los registros');//      by id, class, atributes,     
+            },
+            error: function (result) {
+                alert('Error en la consulta.' + result.responseJSON.ErrorMessage);
+            }
+        });
+    }
+        function Update() {
+            coordenadas = GetJSONCoordenadas();
+
+           
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:1076/api/Coordenadas/Update',
+                datatype: 'json',
+                data: coordenadas,
+                success: function (result) {
+                    $('#myModal').modal();
+                    $('#ModalUpdate').modal('hide');
+                    aler('Se actualizo correctamete');
+                    Console(respond);
+                },
+                error: function (result) {
+                    alert('Error en la consulta.' + result.responseJSON.ErrorMessage);
+                }
+            });
+
+        };
+    
+
+</script>
+

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BibliotecaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Coordenadas">
+          <Key>
+            <PropertyRef Name="IdCoordenadas" />
+          </Key>
+          <Property Name="IdCoordenadas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Estante" Type="varchar" MaxLength="20" />
+          <Property Name="Sala" Type="varchar" MaxLength="50" />
+          <Property Name="Librero" Type="varchar" MaxLength="10" />
+          <Property Name="Posicion" Type="int" />
+        </EntityType>
+        <EntityType Name="Volumen">
+          <Key>
+            <PropertyRef Name="NumeroVolumen" />
+          </Key>
+          <Property Name="NumeroVolumen" Type="int" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Function Name="CoordenadasAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Estante" Type="varchar" Mode="In" />
+          <Parameter Name="Sala" Type="varchar" Mode="In" />
+          <Parameter Name="Librero" Type="varchar" Mode="In" />
+          <Parameter Name="Posicion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CoordenadasDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCoordenadas" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CoordenadasGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CoordenadasGetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCoordenada" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CoordenadasUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCoordenadas" Type="int" Mode="In" />
+          <Parameter Name="Estante" Type="varchar" Mode="In" />
+          <Parameter Name="Sala" Type="varchar" Mode="In" />
+          <Parameter Name="Librero" Type="varchar" Mode="In" />
+          <Parameter Name="Posicion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VolumenAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumeroVolumen" Type="int" Mode="In" />
+          <Parameter Name="Titulo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="VolumenDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumeroVolumen" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VolumenGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VolumenGetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumeroVolumen" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VolumenUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumeroVolumen" Type="int" Mode="In" />
+          <Parameter Name="Titulo" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="BibliotecaModelStoreContainer">
+          <EntitySet Name="Coordenadas" EntityType="Self.Coordenadas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Volumen" EntityType="Self.Volumen" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BibliotecaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Coordenada">
+          <Key>
+            <PropertyRef Name="IdCoordenadas" />
+          </Key>
+          <Property Name="IdCoordenadas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estante" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sala" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Librero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Posicion" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Voluman">
+          <Key>
+            <PropertyRef Name="NumeroVolumen" />
+          </Key>
+          <Property Name="NumeroVolumen" Type="Int32" Nullable="false" />
+          <Property Name="Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BibliotecaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Coordenadas" EntityType="Self.Coordenada" />
+          <EntitySet Name="Volumen" EntityType="Self.Voluman" />
+          <FunctionImport Name="CoordenadasAdd">
+            <Parameter Name="Estante" Mode="In" Type="String" />
+            <Parameter Name="Sala" Mode="In" Type="String" />
+            <Parameter Name="Librero" Mode="In" Type="String" />
+            <Parameter Name="Posicion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CoordenadasGetAll" ReturnType="Collection(BibliotecaModel.CoordenadasGetAll_Result)" />
+          <FunctionImport Name="CoordenadasUpdate">
+            <Parameter Name="IdCoordenadas" Mode="In" Type="Int32" />
+            <Parameter Name="Estante" Mode="In" Type="String" />
+            <Parameter Name="Sala" Mode="In" Type="String" />
+            <Parameter Name="Librero" Mode="In" Type="String" />
+            <Parameter Name="Posicion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VolumenAdd">
+            <Parameter Name="NumeroVolumen" Mode="In" Type="Int32" />
+            <Parameter Name="Titulo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="VolumenDelete">
+          <Parameter Name="NumeroVolumen" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VolumenGetAll" ReturnType="Collection(BibliotecaModel.VolumenGetAll_Result)" />
+          <FunctionImport Name="VolumenUpdate">
+            <Parameter Name="NumeroVolumen" Mode="In" Type="Int32" />
+            <Parameter Name="Titulo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CoordenadasGetById" ReturnType="Collection(BibliotecaModel.CoordenadasGetById_Result)">
+          <Parameter Name="IdCoordenada" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VolumenGetById" ReturnType="Collection(BibliotecaModel.VolumenGetById_Result)">
+          <Parameter Name="NumeroVolumen" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CoordenadasDelete">
+            <Parameter Name="IdCoordenadas" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="CoordenadasGetAll_Result">
+          <Property Type="String" Name="Estante" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="IdCoordenadas" Nullable="false" />
+          <Property Type="String" Name="Sala" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Librero" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Posicion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="VolumenGetAll_Result">
+          <Property Type="Int32" Name="NumeroVolumen" Nullable="false" />
+          <Property Type="String" Name="Titulo" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="CoordenadasGetById_Result">
+          <Property Type="String" Name="Estante" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="IdCoordenadas" Nullable="false" />
+          <Property Type="String" Name="Sala" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Librero" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Posicion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="VolumenGetById_Result">
+          <Property Type="Int32" Name="NumeroVolumen" Nullable="false" />
+          <Property Type="String" Name="Titulo" Nullable="true" MaxLength="100" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BibliotecaModelStoreContainer" CdmEntityContainer="BibliotecaEntities">
+          <EntitySetMapping Name="Coordenadas">
+            <EntityTypeMapping TypeName="BibliotecaModel.Coordenada">
+              <MappingFragment StoreEntitySet="Coordenadas">
+                <ScalarProperty Name="IdCoordenadas" ColumnName="IdCoordenadas" />
+                <ScalarProperty Name="Estante" ColumnName="Estante" />
+                <ScalarProperty Name="Sala" ColumnName="Sala" />
+                <ScalarProperty Name="Librero" ColumnName="Librero" />
+                <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Volumen">
+            <EntityTypeMapping TypeName="BibliotecaModel.Voluman">
+              <MappingFragment StoreEntitySet="Volumen">
+                <ScalarProperty Name="NumeroVolumen" ColumnName="NumeroVolumen" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CoordenadasAdd" FunctionName="BibliotecaModel.Store.CoordenadasAdd" />
+          <FunctionImportMapping FunctionImportName="CoordenadasGetAll" FunctionName="BibliotecaModel.Store.CoordenadasGetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BibliotecaModel.CoordenadasGetAll_Result">
+                <ScalarProperty Name="Estante" ColumnName="Estante" />
+                <ScalarProperty Name="IdCoordenadas" ColumnName="IdCoordenadas" />
+                <ScalarProperty Name="Sala" ColumnName="Sala" />
+                <ScalarProperty Name="Librero" ColumnName="Librero" />
+                <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CoordenadasUpdate" FunctionName="BibliotecaModel.Store.CoordenadasUpdate" />
+          <FunctionImportMapping FunctionImportName="VolumenAdd" FunctionName="BibliotecaModel.Store.VolumenAdd" />
+          <FunctionImportMapping FunctionImportName="VolumenDelete" FunctionName="BibliotecaModel.Store.VolumenDelete" />
+          <FunctionImportMapping FunctionImportName="VolumenGetAll" FunctionName="BibliotecaModel.Store.VolumenGetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BibliotecaModel.VolumenGetAll_Result">
+                <ScalarProperty Name="NumeroVolumen" ColumnName="NumeroVolumen" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VolumenUpdate" FunctionName="BibliotecaModel.Store.VolumenUpdate" />
+          <FunctionImportMapping FunctionImportName="CoordenadasGetById" FunctionName="BibliotecaModel.Store.CoordenadasGetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BibliotecaModel.CoordenadasGetById_Result">
+                <ScalarProperty Name="Estante" ColumnName="Estante" />
+                <ScalarProperty Name="IdCoordenadas" ColumnName="IdCoordenadas" />
+                <ScalarProperty Name="Sala" ColumnName="Sala" />
+                <ScalarProperty Name="Librero" ColumnName="Librero" />
+                <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VolumenGetById" FunctionName="BibliotecaModel.Store.VolumenGetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BibliotecaModel.VolumenGetById_Result">
+                <ScalarProperty Name="NumeroVolumen" ColumnName="NumeroVolumen" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CoordenadasDelete" FunctionName="BibliotecaModel.Store.CoordenadasDelete" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

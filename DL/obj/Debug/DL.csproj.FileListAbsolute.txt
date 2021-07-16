@@ -1,0 +1,20 @@
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\DL\bin\Debug\DL.dll.config
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\DL\bin\Debug\DL.dll
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\DL\bin\Debug\DL.pdb
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\DL\bin\Debug\EntityFramework.dll
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\DL\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\DL\bin\Debug\EntityFramework.xml
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\DL\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\DL\obj\Debug\DL.dll
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\DL\obj\Debug\DL.pdb
+c:\users\alien 18\documents\visual studio 2013\Projects\LGarciaExamenGeneralNET\DL\obj\Debug\DL.csprojResolveAssemblyReference.cache
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\DL\bin\Debug\DL.dll.config
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\DL\bin\Debug\DL.dll
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\DL\bin\Debug\DL.pdb
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\DL\bin\Debug\EntityFramework.dll
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\DL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\DL\bin\Debug\EntityFramework.xml
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\DL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\DL\obj\Debug\DL.csprojResolveAssemblyReference.cache
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\DL\obj\Debug\DL.dll
+C:\Users\Alien 18\Documents\Lesly Guadalupe Garcia Lopez\LGarciaExamenGeneralNET\LGarciaExamenGeneralNET\DL\obj\Debug\DL.pdb

@@ -1,0 +1,39 @@
+﻿@model ML.Volumen
+@{
+    ViewBag.Title = "GetAll";
+}
+
+<h2>Coordenadas</h2>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div style="float:right; margin-bottom:1rem;">
+            @Html.ActionLink("+", "Form", "Volumen", htmlAttributes: new { @class = "btn btn-success" })
+        </div>
+        <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <td>Editar</td>
+                    <td>Número de volumen</td>
+                    <td>Titulo</td>
+                    <td>Eliminar</td>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (ML.Volumen volumen in Model.VolumenList)
+                {
+                    <tr>
+                        <td><a class="btn btn-warning glyphicon glyphicon-edit" href="@Url.Action("Form","Volumen",new {Idvolumen = volumen.NumeroVolumen})"></a></td>
+                        <td>@volumen.NumeroVolumen</td>
+                        <td>@volumen.Titulo</td>
+                       
+                        <td><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Delete", "Volumen", new { Idvolumen = volumen.NumeroVolumen })" onclick="return confirm('Estas seguro que deseas eliminar el registro?');" ;></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

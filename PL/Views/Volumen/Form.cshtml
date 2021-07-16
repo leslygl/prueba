@@ -1,0 +1,89 @@
+﻿@model ML.Volumen
+@{
+    ViewBag.Title = "Form";
+    
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Volumen</h5>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <div class="row">
+        <div class="col-md-12">
+           
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.NumeroVolumen)
+                            @Html.TextBoxFor(model => model.NumeroVolumen, new { @class = "form-control", @id="txtNumeroVolumen" })
+                            @Html.ValidationMessageFor(model => model.NumeroVolumen)
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Titulo)
+                            @Html.TextBoxFor(model => model.Titulo, new { @class = "form-control", @id = "txtTitulo" })
+                            @Html.ValidationMessageFor(model => model.Titulo)
+                        </div>
+                    </div>
+                                      
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input onclick="Guardar()" value="Guardar" type="button" class="btn btn-success" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.ActionLink("Regresar", "GetAll", "Volumen", htmlAttributes: new { @class = "btn btn-danger" })
+                        </div>
+                    </div>
+
+
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function Guardar() {
+        Add();
+    }
+
+    function GetJSONVolumen() {
+        var volumen = {
+            NumeroVolumen: $('#txtNumeroVolumen').val(),
+            Titulo: $('#txtTitulo').val(),
+           }
+        return volumen;
+    }
+
+
+    function Add() {
+
+        volumen = GetJSONVolumen();
+        
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:1076/api/Volumen/Add',
+            dataType: 'json',
+            data: volumen,
+            success: function (result) {
+                $('#myModal').modal();
+                aler('Se registro correctamete presione regrear para ver la tabla con los registros');//      by id, class, atributes,     
+            },
+            error: function (result) {
+                alert('Error en la consulta.' + result.responseJSON.ErrorMessage);
+            }
+        });
+    }
+        
+</script>
+
